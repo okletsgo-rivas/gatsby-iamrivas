@@ -1,0 +1,88 @@
+header {
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+nav {
+  transition: 1s background;
+}
+
+nav.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+nav.scrolled .navbar-nav .nav-link {
+  color: #ccc;
+}
+nav.scrolled .navbar-nav .nav-link:focus,
+nav.scrolled .navbar-nav .nav-link:active,
+nav.scrolled .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.nav-link {
+  font-size: 2rem;
+  transistion: 1s color;
+}
+
+.projects .filters {
+  margin-bottom: 20px;
+}
+
+.projects .filters .btn {
+  border-color: #aaa;
+  cursor: pointer;
+}
+
+.project {
+  margin-bottom: 40px;
+  background: #ffffff99;
+  box-shadow: 0 6px 14px #888;
+}
+
+.project:nth-child(even) .thumb {
+  left: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .project:nth-child(odd) .full {
+    order: 1;
+  }
+}
+
+.project .child {
+  min-height: 300px;
+  outline: 1px solid #ddd;
+}
+
+.project .info {
+  padding: 40px;
+}
+
+.project .thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  border-bottom-left-radius: 100%;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0 0 10px #00000099;
+  filter: grayscale(50%);
+}
+
+.project .full {
+  background-color: #444;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
