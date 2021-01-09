@@ -54,6 +54,10 @@ nav {
   .btn {
     border-color: #aaa;
     cursor: pointer;
+
+    &.active {
+      background-color: $primary;
+    }
   }
 }
 
