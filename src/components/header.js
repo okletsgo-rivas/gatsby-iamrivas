@@ -1,34 +1,39 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Img from "gatsby-image"
+import { Navbar, Nav, Container } from "react-bootstrap"
+
+import Logo from "./logo"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+  <Navbar
+    expand="md"
+    sticky="top"
+    className={"px-0" + (true ? "" : " scrolled")}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+    <Container className="p-0">
+      <Navbar.Brand>
+        <Link to="/">
+          <Logo />
         </Link>
-      </h1>
-    </div>
-  </header>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbar-nav" />
+      <Navbar.Collapse id="navbar-nav">
+        <Nav className="ml-auto">
+          <Nav.Link as={Link} to="/projects">
+            projects
+          </Nav.Link>
+          <Nav.Link as={Link} to="/bio">
+            bio
+          </Nav.Link>
+          <Nav.Link as={Link} to="/resume">
+            resume
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
 )
 
 Header.propTypes = {
